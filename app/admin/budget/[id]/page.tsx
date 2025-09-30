@@ -31,7 +31,15 @@ const approvalTimeline = [
   { stage: 'Final Approval', status: 'Pending', date: '', comments: 'Funds release pending' },
 ];
 
-export default function AdminBudgetDetailPage({ params }: { params: { id: string } }) {
+type BudgetDetailPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+
+export default function AdminBudgetDetailPage({ params }: BudgetDetailPageProps) {
+  const { id } = params;
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
