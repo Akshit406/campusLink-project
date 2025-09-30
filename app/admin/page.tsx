@@ -86,7 +86,7 @@ export default function AdminDashboard() {
           Welcome, Admin 👋
         </h1>
         <p className="text-gray-600 text-lg">
-          Here's what's happening across CampusLink today.
+          {"Here's what's happening across CampusLink today."}
         </p>
       </div>
 

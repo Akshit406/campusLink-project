@@ -72,7 +72,7 @@ export default function VerifyOTPPage() {
               Verify Your Email
             </h1>
             <p className="text-gray-600 text-sm">
-              We've sent a 6-digit code to {maskedEmail}
+              {"We've sent a 6-digit code to"} {maskedEmail}
             </p>
           </div>
 
