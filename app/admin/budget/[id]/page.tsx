@@ -32,12 +32,12 @@ const approvalTimeline = [
 ];
 
 type BudgetDetailPageProps = {
-  params: Promise<{ id: string }>; // 👈 matches Next.js typing
+  params: { id: string }; 
 };
 
 
 export default function AdminBudgetDetailPage({ params }: BudgetDetailPageProps) {
-  const { id } = use(params);
+  const { id } = params;
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
