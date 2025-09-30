@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { use, useState } from 'react';
 
 const mockBudgetRequest = {
   id: 'BGT-012',
@@ -32,14 +32,12 @@ const approvalTimeline = [
 ];
 
 type BudgetDetailPageProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>; // 👈 matches Next.js typing
 };
 
 
 export default function AdminBudgetDetailPage({ params }: BudgetDetailPageProps) {
-  const { id } = params;
+  const { id } = use(params);
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
@@ -70,7 +68,7 @@ export default function AdminBudgetDetailPage({ params }: BudgetDetailPageProps)
         ← Back to Budget Requests
       </Link>
 
-      <h1 className="text-3xl font-bold text-[#004aad] mb-8">Budget Request Review</h1>
+      <h1 className="text-3xl font-bold text-[#004aad] mb-8">Budget Request Review - {id}</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Main Content */}
