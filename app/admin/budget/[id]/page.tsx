@@ -32,12 +32,12 @@ const approvalTimeline = [
 ];
 
 type BudgetDetailPageProps = {
-  params: { id: string }; 
+  params: Promise<{ id: string }>; 
 };
 
 
 export default function AdminBudgetDetailPage({ params }: BudgetDetailPageProps) {
-  const { id } = params;
+  const { id } = use(params);
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
