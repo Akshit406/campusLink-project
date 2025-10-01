@@ -3,9 +3,7 @@
 import Link from 'next/link';
 import { use, useState } from 'react';
 
-type BudgetDetailPageProps = {
-  params: { id: string }; 
-};
+
 
 const mockBudgetRequest = {
   id: 'BGT-012',
