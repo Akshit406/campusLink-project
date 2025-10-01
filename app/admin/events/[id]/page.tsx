@@ -3,6 +3,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+type AdminEventDetailPageProps = {
+  params: { id: string };
+};
+
 const mockEventRequest = {
   id: 'EVT-008',
   name: 'Annual Cultural Fest',
@@ -26,8 +30,8 @@ const mockEventRequest = {
   ],
 };
 
-export default function AdminEventDetailPage({ params }: { params: { id: string } }) {
-  const { id } = params; 
+export default function AdminEventDetailPage({ params }: AdminEventDetailPageProps) {
+  const { id } = params;
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
@@ -43,7 +47,7 @@ export default function AdminEventDetailPage({ params }: { params: { id: string 
         className="inline-flex items-center text-[#004aad] hover:text-[#003380] font-medium mb-6"
       >
         ← Back to Event Approvals
-      </Link>
+      </Link>   
 
       <h1 className="text-3xl font-bold text-[#004aad] mb-8">Event Proposal Review - {id} </h1>
 
