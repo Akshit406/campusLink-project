@@ -26,8 +26,8 @@ const mockEventRequest = {
   ],
 };
 
-export default async function AdminEventDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export default function AdminEventDetailPage({ params }: { params: { id: string } }) {
+  const { id } = params; 
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
@@ -45,7 +45,7 @@ export default async function AdminEventDetailPage({ params }: { params: Promise
         ← Back to Event Approvals
       </Link>
 
-      <h1 className="text-3xl font-bold text-[#004aad] mb-8">Event Proposal Review</h1>
+      <h1 className="text-3xl font-bold text-[#004aad] mb-8">Event Proposal Review - {id} </h1>
 
       <div className="space-y-6">
         {/* Event Information */}
