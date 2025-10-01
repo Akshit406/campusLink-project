@@ -3,6 +3,11 @@
 import Link from 'next/link';
 import { use, useState } from 'react';
 
+type BudgetDetailPageProps = {
+  params: { id: string }; 
+};
+
+
 const mockBudgetRequest = {
   id: 'BGT-012',
   club: 'Tech Club',
@@ -31,13 +36,11 @@ const approvalTimeline = [
   { stage: 'Final Approval', status: 'Pending', date: '', comments: 'Funds release pending' },
 ];
 
-type BudgetDetailPageProps = {
-  params: Promise<{ id: string }>; 
-};
+
 
 
 export default function AdminBudgetDetailPage({ params }: BudgetDetailPageProps) {
-  const { id } = use(params);
+  const { id } = params;
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 

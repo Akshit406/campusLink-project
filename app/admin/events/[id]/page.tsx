@@ -26,7 +26,8 @@ const mockEventRequest = {
   ],
 };
 
-export default function AdminEventDetailPage({ params }: { params: { id: string } }) {
+export default async function AdminEventDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const [action, setAction] = useState('');
   const [comments, setComments] = useState('');
 
