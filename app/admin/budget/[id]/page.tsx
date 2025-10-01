@@ -7,7 +7,6 @@ type BudgetDetailPageProps = {
   params: { id: string }; 
 };
 
-
 const mockBudgetRequest = {
   id: 'BGT-012',
   club: 'Tech Club',
